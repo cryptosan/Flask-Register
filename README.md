@@ -1,8 +1,10 @@
 # Flask-Register
+Author: Cryptos An  
+[pypi](https://pypi.python.org/pypi/Flask-Register)  
+[github](https://github.com/cryptosan/flask-register)  
 
 ### Usage:
-
-#### 1.Init RegisterManager
+#### 1. Init RegisterManager
 ``` python
 ...
 from flask.ext.register import RegisterManager
@@ -14,14 +16,14 @@ signup.save_redirect_view('index') # A name of view function where you want redi
 ...
 ```
 
-#### 2.Configurate for RegisterManager
+#### 2. Configurate for RegisterManager
 ``` python
 ...
 REGISTER_ENABLED = True/False
 ...
 ```
 
-#### 3.Use RegisterManager decorator with view function.
+#### 3. Use RegisterManager decorator with view function.
 ``` python
 ...
 from app import signup
@@ -48,10 +50,10 @@ def register():
 ...
 ```
 
-#### 4.Get a piece of state that can show a Link in template.
-This is an option, if doesn't use `register_form`,
-Register link will show all time, but clients can't use
-the view.
+#### 4. Get a piece of state that can show a Link in template.
+This is an option, if doesn't use `register_form`,  
+Register link will show all time, but clients can't use  
+the view.  
 ``` html
 <nav>
 	<a href="{{ url_for('index') }}">Home</a>
