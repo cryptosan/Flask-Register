@@ -10,7 +10,7 @@ from flask.ext.register import RegisterManager
 
 ...
 signup = RegisterManager(app)
-signup.save_redirect_view('index')
+signup.save_redirect_view('index') # A name of view function where you want redirect.
 ...
 ```
 
