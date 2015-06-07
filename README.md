@@ -2,7 +2,7 @@
 
 ### Usage:
 
-Init RegisterManager
+#### 1.Init RegisterManager
 ``` python
 ...
 from flask.ext.register import RegisterManager
@@ -14,14 +14,14 @@ signup.save_redirect_view('index') # A name of view function where you want redi
 ...
 ```
 
-Configurate in `config.py`
+#### 2.Configurate for RegisterManager
 ``` python
 ...
 REGISTER_ENABLED = True/False
 ...
 ```
 
-Use RegisterManager decorator with view function.
+#### 3.Use RegisterManager decorator with view function.
 ``` python
 ...
 from app import signup
@@ -29,6 +29,10 @@ from flask.ext.register import register_required
 ...
 
 ...
+# Option
+# If doesn't use this code in `before_request`
+# Register link of templates will show all time, but
+# clients can't use the view.
 @app.before_request
 def bef_req():
 	...
@@ -44,7 +48,10 @@ def register():
 ...
 ```
 
-Get a piece of state that can show a Link in templates
+#### 4.Get a piece of state that can show a Link in template.
+This is an option, if doesn't use `register_form`,
+Register link will show all time, but clients can't use
+the view.
 ``` html
 <nav>
 	<a href="{{ url_for('index') }}">Home</a>
